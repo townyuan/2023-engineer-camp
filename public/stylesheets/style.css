@@ -10,6 +10,9 @@ body {
   align-items: center;
   text-align: center;
   height:100vh;
+  background-image: url(https://i.imgur.com/2awVfNp.png);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 ::placeholder {
@@ -20,24 +23,27 @@ body {
   border: 1px solid #1b1b1b;
   border-radius: 16px;
   background-color: #222222;
-  padding: 32px 24px; 
+  padding: 32px 24px;
+  opacity: 0.9;
 }
 .card-img {
-  width: 150px;
+  width: 300px;
 }
 .card-title {
   font-size: 20px;
   font-weight: 300;
   margin-bottom: 24px;
+  position: relative;
 }
 .card-text {
-  font-size: 40px;
+  font-size: 30px;
 }
 .card-input {
   padding: 10px 20px;
   border-radius: 8px;
   margin-right: 8px;
   border: none;
+  width: 300px;
 }
 .card-btn {
   background-color: #ffce45;
@@ -49,4 +55,21 @@ body {
 }
 .card-btn:hover {
   opacity: .8;
+}
+
+.type-blink {
+  width: 3px;
+  height: 68px;
+  background-image: linear-gradient(to bottom, #3586ff, rgba(0, 101, 252, 0.5));
+  position: absolute;
+  right: -10px;
+  top: 55%;
+  transform: translateY(-50%);
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }

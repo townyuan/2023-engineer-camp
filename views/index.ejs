@@ -12,21 +12,47 @@
 <body class="body">
   <form action="/" method="post">
     <div class="card">
-      <img
+      <!-- <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/800px-International_Pok%C3%A9mon_logo.svg.png"
-        alt="pokemon_logo" class="card-img">
-      <h1 class="card-title">創意行銷標題產生器</h1>
+        alt="pokemon_logo" class="card-img"> -->
+      <h1 class="card-title" id="typing">創意行銷標題發想器<span class="type-blink"></span></h1>
       <p class="card-text">
         <% if (description.length) { %>
           <%= description %>
         <% } else { %>
-          <%= '???' %>
+          <%= '...' %>
         <% } %>
       </p>
-      <input type="text" name="description" class="card-input" placeholder="請填寫行銷主題" />
+      <input type="text" name="description" class="card-input" placeholder="請填行銷主題，e.g.紅酒、音樂祭" />
       <button type="submit" class="card-btn">送出</button>
     </div>
   </form>
-</body>
 
+  <script>
+    // 打字特效
+    const texts = ['創意行銷標題發想器', '我是行銷標題大師'];
+    let count = 0;
+    let index = 0;
+    let currentText = '';
+    let letter = '';
+
+    (function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+      letter = currentText.slice(0, ++index);
+
+      document.getElementById('typing').textContent = letter;
+      if (letter.length === currentText.length) {
+        count++;
+        index = 0;
+        setTimeout(type, 3000);
+      } else {
+        setTimeout(type, 150);
+      }
+    })();
+  </script>
+
+</body>
 </html>
