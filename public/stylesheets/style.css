@@ -3,7 +3,7 @@
 }
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color: #F9EBE0;
+  background-color: #FBEBDC;
   color: white;
   display: flex;
   justify-content: center;
@@ -47,7 +47,7 @@ body {
   width: 300px;
 }
 .card-btn {
-  background-color: #ffce45;
+  background-color: #f7c02a;
   color: white;
   padding: 8px 16px;
   border-radius: 8px;
